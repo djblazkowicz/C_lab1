@@ -14,7 +14,6 @@ int main(int arg, char** argv)
     int size;
     char yesno[1];
     int tempInt;
-    char* asd;
 
     array = (int*)malloc(cnt * sizeof(int));
 
@@ -42,8 +41,7 @@ int main(int arg, char** argv)
 
     for (int i = 0; i < cnt; i++)
     {
-        asd = array[i];
-        printf("%o\n", asd);
+        printf("%d\n", array[i]);
     }
 
     return 0;
