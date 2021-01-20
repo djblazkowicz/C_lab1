@@ -1,43 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 
-int main(int arg, char **argv) 
+#pragma warning(disable : 4996)
+
+int main(int arg, char** argv)
 {
 
-    int *array;
+    int* array;
     int cnt = 0;
-    char str1[20];
+    int size;
     char yesno[1];
     int tempInt;
+    char* asd;
 
-    array = (int*) malloc(0);
+    array = (int*)malloc(cnt * sizeof(int));
 
     bool ask = true;
-    
+
     while (ask)
     {
+        tempInt = 0;
         printf("give me a number: ");
-        scanf("%s", str1);
-        tempInt = atoi(str1);
-        array = (int*) realloc(array, cnt + 1);
+        scanf("%d", &tempInt);
+        size = cnt + 1;
+        array = (int*)realloc(array, size * sizeof(int));
         array[cnt] = tempInt;
         cnt++;
 
         printf("do you want to add more numbers? y/n: ");
         scanf("%s", yesno);
-        if (yesno[0] == 'n') 
+        if (yesno[0] == 'n')
         {
             ask = false;
-        } else {}
+            break;
+        }
+        else {}
     }
 
     for (int i = 0; i < cnt; i++)
     {
-        printf("%o\n", array[i]);
+        asd = array[i];
+        printf("%o\n", asd);
     }
-    
-   return 0;
-       
+
+    return 0;
+
 }
