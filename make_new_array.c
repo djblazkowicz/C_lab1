@@ -44,6 +44,8 @@ int main(int arg, char **argv)
     //populate new array and print to console the results
     for (i = 0; i < count; i++)
     {
+        //this is ugly but it seems to work
+        //starts new array with grades_1 content then add the rest of the required elements
         if (i < grades_1_actual_size) 
         {
             array_malloc[i] = grades_1[i];
